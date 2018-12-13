@@ -9,7 +9,7 @@
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
     "test": "mocha --reporter spec || exit 0",
-    "test:ts": "mocha -r ts-node/register test/**/*.test.ts || exit 0",
+    "test:ts": "mocha --require ts-node/register --watch-extensions ts,tsx 'test/**/*.{ts,tsx}' || exit 0",
     "web:db": "open https://console.firebase.google.com/u/0/project/cloudfunc-test-dbe14/database/cloudfunc-test-dbe14/data",
     "web:functions": "open https://console.firebase.google.com/u/0/project/cloudfunc-test-dbe14/functions/list",
     "env": "npm run web:functions & npm run web:db"
