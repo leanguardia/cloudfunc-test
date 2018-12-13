@@ -9,6 +9,7 @@
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
     "test": "mocha --reporter spec || exit 0",
+    "test:ts": "mocha -r ts-node/register test/**/*.test.ts || exit 0",
     "web:db": "open https://console.firebase.google.com/u/0/project/cloudfunc-test-dbe14/database/cloudfunc-test-dbe14/data",
     "web:functions": "open https://console.firebase.google.com/u/0/project/cloudfunc-test-dbe14/functions/list",
     "env": "npm run web:functions & npm run web:db"
@@ -19,12 +20,15 @@
     "firebase-functions": "^2.0.3"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
     "chai": "^4.2.0",
     "firebase-functions-test": "^0.1.4",
     "mocha": "^5.2.0",
     "sinon": "^7.0.0",
+    "ts-node": "^7.0.1",
     "tslint": "~5.8.0",
-    "typescript": "~2.8.3"
+    "typescript": "^2.8.4"
   },
   "private": true
 }
